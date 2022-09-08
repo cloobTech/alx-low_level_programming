@@ -1,2 +1,2 @@
 #!/bin/bash
-gcc -c $CFILE -o project.s 
+gcc -s $CFILE
