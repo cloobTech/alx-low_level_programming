@@ -10,10 +10,6 @@
 
 int main(void)
 {
-	/*
-	 * print hello world
-	 */
-
 	char acharacter;
 	int ainteger;
 	long along;
