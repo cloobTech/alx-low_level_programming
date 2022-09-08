@@ -1,2 +1,2 @@
 #!/bin/bash
-gcc -c project.c -o project.o
+gcc -S project.c -o project.o
