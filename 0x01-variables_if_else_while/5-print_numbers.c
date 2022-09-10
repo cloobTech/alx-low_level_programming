@@ -3,6 +3,8 @@
 /**
  * main - Entry Point
  *
+ * Description - Print digits 0 - 9
+ *
  * Return: Always 0 (Success)
  */
 

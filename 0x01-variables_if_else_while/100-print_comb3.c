@@ -3,6 +3,10 @@
 /**
  * main - Entry Point
  *
+ * Description - Get all possible non-reoccuring combination of two digits
+ *
+ * Print the lowest of the two combination
+ *
  * Return: Always 0 (Success)
  */
 

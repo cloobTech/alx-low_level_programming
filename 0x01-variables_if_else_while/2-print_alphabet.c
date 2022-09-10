@@ -3,6 +3,8 @@
 /**
  * main - Entry Point
  *
+ * Description - Print alphabet a-z (lowercase)
+ *
  * Return: Always 0 (Success)
  */
 

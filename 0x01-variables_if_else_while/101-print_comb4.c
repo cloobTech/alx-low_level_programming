@@ -3,6 +3,10 @@
 /**
  * main - Entry Point
  *
+ * Description - Get all possible combination of non-reocccuring 3 digits
+ *
+ * Only the lowest combination should be printed out
+ *
  * Return: Always 0 (Success)
  */
 

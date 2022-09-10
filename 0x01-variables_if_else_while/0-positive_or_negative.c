@@ -5,6 +5,8 @@
 /**
  * main - Entry Point
  *
+ * Decide if a value is negative, positive or zero
+ *
  * Return: Always 0 (Success)
  */
 
