@@ -16,11 +16,19 @@ void times_table()
 
 	for (a = 0; a <= 9; a++)
 	{
-		for (b = 0; b <= 9; b++)
+		_putchar('0');
+		for (b = 1; b <= 9; b++)
 		{
+			
+			if (b <= 9)
+			{
+				_putchar(',');
+				_putchar(' ');
+			}
 			c = a * b;
 			if (c <= 9)
 			{
+				_putchar(' ');
 				_putchar(c + '0');
 			}
 			else
@@ -29,16 +37,8 @@ void times_table()
 				_putchar((c % 10) + '0');
 			}
 
-			if (b != 9)
-			{
-				_putchar(',');
-				_putchar(' ');
-			}
 
-			if (c >= 9)
-				continue;
-			else
-				_putchar(' ');
+
 
 		
 		}
