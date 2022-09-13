@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * main - sum of even number with a fibonnachi sequence
+ * main - sum of even number with a fibonachi sequence
  *
  *
  * Return: Always 0 (Success)
@@ -23,6 +23,6 @@ int main(void)
 		i = k;
 	}
 
-	printf("%d", total);
+	printf("%d\n", total);
 	return (0);
 }
