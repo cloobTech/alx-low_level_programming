@@ -1,16 +1,11 @@
 #include "main.h"
-#include "_putchar.c"
 
 /**
  * times_table - prints the 9 times table, starting with 0.
  *
  */
-int main(void)
-{
-    times_table();
-    return (0);
-}
-void times_table()
+
+void times_table(void)
 {
 	int a, b, c;
 
@@ -19,7 +14,6 @@ void times_table()
 		_putchar('0');
 		for (b = 1; b <= 9; b++)
 		{
-			
 			if (b <= 9)
 			{
 				_putchar(',');
@@ -36,13 +30,7 @@ void times_table()
 				_putchar((c / 10) + '0');
 				_putchar((c % 10) + '0');
 			}
-
-
-
-
-		
 		}
-	
 		_putchar('\n');
 	}
 }
