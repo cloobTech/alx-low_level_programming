@@ -9,17 +9,6 @@
  * Return: null is @n is greater than 15 and less than 0
  */
 
-int main(void)
-{
-    print_times_table(3);
-    _putchar('\n');
-    print_times_table(5);
-    _putchar('\n');
-    print_times_table(98);
-    _putchar('\n');
-    print_times_table(12);
-    return (0);
-}
 
 void print_times_table(int n)
 {
@@ -28,7 +17,7 @@ void print_times_table(int n)
 	
 	if (n > 15 || n < 0)
 	{
-	_putchar('h');
+		return;
 	}
 
 	int a, b, c;
