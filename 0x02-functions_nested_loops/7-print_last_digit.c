@@ -19,7 +19,7 @@ int print_last_digit(int n)
 		return (n);
 	}
 
-	else if (n < 0)
+	else
 	{
 		n = -n;
 		n = n % 10;
