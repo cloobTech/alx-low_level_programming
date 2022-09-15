@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * _isalpha - check that an input is an alphabet
  *
