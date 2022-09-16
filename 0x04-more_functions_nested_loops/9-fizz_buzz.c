@@ -6,10 +6,10 @@
  * followed by a new line. But for multiples of three print Fizz
  * instead of the number and for the multiples of five print Buzz.
  * For numbers which are multiples of both three and five print FizzBuzz.
- *
+ * Return: Always 0 (Success)
  */
 
-void main(void)
+int main(void)
 {
 
 	int i;
@@ -31,5 +31,6 @@ void main(void)
 	}
 
 	printf("\n");
+	return (0);
 
 }
