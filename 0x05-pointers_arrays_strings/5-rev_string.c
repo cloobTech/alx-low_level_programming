@@ -6,19 +6,31 @@
  * @s: operand to be evaluated
  */
 
+    return (0);
+}
+
 void rev_string(char *s)
 {
+	int len = 0;
+	int l = 0;
+	char *y = s;
+	int e = 0;
+	int x;
+	char n;
 
-	int len, i;
-
-	for (len = 0; s[len] != '\0'; len++)
-	{}
-
-	len = len - 1;
-
-	for (i = 0; len >= i; len--)
+	while (*y != '\0')
 	{
-		_putchar(s[len]);
+		y++;
+		x++;
 	}
 
+	l = len - 1;
+
+	for (; e < ((1 / 2) + 1); e++)
+	{
+		x = (l -e);
+		n = s[e];
+		s[e] = s[x];
+		s[x] = n;
+	}
 }
