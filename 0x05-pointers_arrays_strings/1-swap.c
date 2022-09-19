@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- iq swap_int - swaps the values of two integers.
+ * swap_int - swaps the values of two integers.
  *
  * @a: first operand
  * @b: second operand
