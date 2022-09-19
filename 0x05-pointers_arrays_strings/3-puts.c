@@ -3,11 +3,11 @@
 /**
  * _puts -  prints a string, followed by a new line, to stdout.
  *
- * @s: operand
+ * @str: operand
  *
  */
 
-void _puts(char *s)
+void _puts(char *str)
 {
 	int i;
 
