@@ -21,13 +21,14 @@ char *_strncpy(char *dest, char *src, int n)
 	 * _strlen - gets the lenght of a string
 	 */
 
-	len = _strlen(src);
-
 	for (i = 0; (src[i] != '\0') && (i < n); i++)
 	{
 		dest[i] = src[i];
 	}
 
-	dest[len] = '\0';
+	len = _strlen(dest);
+
+	if (dest[len] != '\0')
+		dest[len] = '\0';
 	return (dest);
 }
