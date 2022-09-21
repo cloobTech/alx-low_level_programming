@@ -30,5 +30,17 @@ char *_strncpy(char *dest, char *src, int n)
 
 	if (dest[len] != '\0')
 		dest[len] = '\0';
+
+	/**
+	 * if In a case where the length of src is less than that of n, the
+	 * remainder of dest will be padded with null bytes.
+	 */
+
+	while (i < n)
+	{
+		dest[i] = '\0';
+		i++;
+	}
+
 	return (dest);
 }
