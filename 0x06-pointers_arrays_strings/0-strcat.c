@@ -5,9 +5,9 @@
  * _strcat - concatenates two strings.
  *
  * @dest: first parameter (concatenate string with the second parameter)
- * @str: second parameter
+ * @src: second parameter
  *
- * Returns: a pointer to the resulting string dest
+ * Return: a pointer to the resulting string dest
  */
 
 
