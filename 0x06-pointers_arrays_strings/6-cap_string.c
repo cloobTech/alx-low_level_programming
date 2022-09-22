@@ -14,6 +14,14 @@ char *cap_string(char *str)
 
 	len = sizeof(seperators) / sizeof(seperators[0]);
 
+	/**
+	 * check if the first string is a character
+	 * if yes, make it uppercase
+	 *
+	 */
+	if (str[0] >= 'a' && str[0] <= 'z')
+		str[0] -= 32;
+
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
