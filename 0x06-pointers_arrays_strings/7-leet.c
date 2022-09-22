@@ -1,38 +1,25 @@
 #include "main.h"
-#include "encode.c"
-#include <stdio.h>
-
 /**
- * leet - encodes a string into 1337.
+ * leet - encode into 1337speak
+ * @n: input value
  *
- * @str: string to be encoded
- *
- * Return: encoded string
+ * Return: n value
  */
-int main(void)
+char *leet(char *n)
 {
-    char s[] = "Expect the best. Prepare for the worst. Capitalize on what comes.\n";
-    char *p;
+	int i, j;
+	char x1[] = "aAeEoOtTlL";
+	char x2[] = "4433007711";
 
-    p = leet(s);
-    printf("%s", p);
-    printf("%s", s);
-    return (0);
-}
-char *leet(char *str)
-{
-	int i, len;
-	char *code[] = {"a", "A", "e", "E", "o", "O", "l", "L", "t", "T"};
-
-	len = sizeof(code) / sizeof(code[0]);
-	for (i = 0; str[i] != '\0'; i++)
+	for (i = 0; n[i] != '\0'; i++)
 	{
-		for (; (len--) >= 0; len--)
+		for (j = 0; j < 10; j++)
 		{
-			if ((str[i]) == code[len])
-			//	printf("%d", encode(code[len]));
-				printf("spotted ");
+			if (n[i] == x1[j])
+			{
+				n[i] = x2[j];
+			}
 		}
 	}
-	return (str);
+	return (n);
 }
