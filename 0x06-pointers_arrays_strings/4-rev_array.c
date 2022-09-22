@@ -12,7 +12,6 @@ void reverse_array(int *a, int n)
 	/**
 	 * temp: temporary copy of the initial array
 	 */
-
 	int *temp, i, size;
 
 	temp = a;
