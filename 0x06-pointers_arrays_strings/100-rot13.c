@@ -2,35 +2,29 @@
 
 /**
  * rot13 - encodes a string using rot13.
+ * @s: The string
  *
- * @n: parameter to be encoded
- *
- * Return: enconded character
+ * Return: The string
  */
-
-char *rot13(char *n)
+char *rot13(char *s)
 {
 	int i, j;
+	char r[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+	char alpha[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char boolean;
 
-	char a[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
-	char b[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-
-	char boolen;
-
-	for (i = 0; n[i] != '\0'; i++)
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		boolen = 0;
-
-		for (j = 0; b[j] != '\0' && boolen == 0; j++)
+		boolean = 0;
+		for (j = 0; alpha[j] != '\0' && boolean == 0; j++)
 		{
-			if (n[i] == b[j])
+			if (s[i] == alpha[j])
 			{
-				n[i] = a[j];
-				boolen = 1
+				s[i] = r[j];
+				boolean = 1;
 			}
-
 		}
 	}
 
-	return (n)
+	return (s);
 }
