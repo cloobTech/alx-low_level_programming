@@ -1,21 +1,4 @@
 #include "main.h"
-#include <stdio.h>
-
-/**
- * main - check the code
- *
- * Return: Always 0.
- */
-int main(void)
-{
-    char *s = "hello, world";
-    char *f = "world";
-    char *t;
-
-    t = _strpbrk(s, f);
-    printf("%s\n", t);
-    return (0);
-}
 
 /**
  * _strpbrk -  searches a string for any of a set of bytes.
@@ -29,16 +12,19 @@ int main(void)
 
 char *_strpbrk(char *s, char *accept)
 {
-	while (*s != '\0')
+	int i, j;
+
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		while (*accept != '\0')
-	       	{
-			if (*s == *accept)
-				return (s);
+		for (j = 0; accept[j] != '\0'; j++)
+		{
+			if (accept[j] == s[i])
+			{
+				return (&s[i]);
+			}
 		}
-		s++;
 	}
 
-	return (NULL);
+	return ('\0');
 
 }
