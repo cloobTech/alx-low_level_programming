@@ -1,5 +1,25 @@
 #include "main.h"
+#include <stdio.h>
 
+/**
+ * main - check the code
+ *
+ * Return: Always 0.
+ */
+int main(void)
+{
+    int r;
+
+    r = is_palindrome("level");
+    printf("%d\n", r);
+    r = is_palindrome("redder");
+    printf("%d\n", r);
+    r = is_palindrome("test");
+    printf("%d\n", r);
+    r = is_palindrome("step on no pets");
+    printf("%d\n", r);
+    return (0);
+}
 /**
  * rev_recursion - prints a string in reverse.
  *
@@ -35,10 +55,9 @@ int palin_helper(char *s1)
 	{
 		s1++;
 		s2++;
-		rev_recursion(s1);
+		palin_helper(s2);
 	}
-	if (*s1 == '\0')
-		return (1);
+	return (1);
 }
 
 
