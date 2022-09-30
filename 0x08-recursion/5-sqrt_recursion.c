@@ -1,11 +1,10 @@
 #include "main.h"
 
 /**
- * _sqrt_recursion - returns the natural square root of a number.
- *
- * @n: operand
- *
- * Return: return natural square root else (-1)
+ * _check_root - helper function
+ * @i: operand
+ * @j: 2nd operand
+ * Return: root @j;
  */
 
 int _check_root(int i, int j)
@@ -18,12 +17,14 @@ int _check_root(int i, int j)
 }
 
 
-/**
- * _check_root - helper function
- * @k: operand
- * Return: root
- */
 
+/**
+ * _sqrt_recursion - returns the natural square root of a number.
+ *
+ * @n: operand
+ *
+ * Return: return natural square root else (-1)
+ */
 
 int _sqrt_recursion(int n)
 {
