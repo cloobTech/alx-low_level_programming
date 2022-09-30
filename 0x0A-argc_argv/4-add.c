@@ -21,6 +21,8 @@ int main(int argc, char *argv[])
 	{
 		for (i = 1; i < argc; i++)
 		{
+			if (*argv[i] == 48)
+				continue;
 			if(atoi(argv[i]) > 0)
 			sum += atoi(argv[i]);
 			else
