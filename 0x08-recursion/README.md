@@ -42,3 +42,16 @@ FYI: The standard library provides a different function: sqrt. Run man sqrt to l
 Write a function that returns 1 if the input integer is a prime number, otherwise return 0.
 
 Prototype: int is_prime_number(int n);
+
+### 100-is_palindrome.c
+Write a function that returns 1 if a string is a palindrome and 0 if not.
+
+Prototype: int is_palindrome(char *s);
+An empty string is a palindrome
+
+### 101-wildcmp.c
+Write a function that compares two strings and returns 1 if the strings can be considered identical, otherwise return 0.
+
+Prototype: int wildcmp(char *s1, char *s2);
+s2 can contain the special character *.
+The special char * can replace any string (including an empty string)
