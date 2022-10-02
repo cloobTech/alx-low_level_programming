@@ -12,7 +12,7 @@ int is_prime_number(int n);
 int _check_root(int i, int j);
 int is_palindrome(char *s);
 int wildcmp(char *s1, char *s2);
-int palin_helper(char *s1);
+int palin_helper(char *s1, int len);
 char *rev_recursion(char *s_rev);
 
 
