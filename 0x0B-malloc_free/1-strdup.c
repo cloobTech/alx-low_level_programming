@@ -22,22 +22,28 @@ char *_strdup(char *str)
 		return (NULL);
 	i = 0;
 	len = 0;
-
+	/**
+	 * Try to get length of the string parameter
+	 * We could also use a strlen function instead to make lide easier
+	 */
 	while (*str != '\0')
 	{
 		str++;
 		len++;
 	}
-
+	/**
+	 * We reserve the string to it's original position
+	 */
 	while (i < len)
 	{
 		str--;
 		i++;
 	}
 
+
+
 	dup_str = (char *) malloc((len * sizeof(*str)) + 1);
 	i = 0;
-
 
 	if (dup_str == NULL)
 		return (NULL);

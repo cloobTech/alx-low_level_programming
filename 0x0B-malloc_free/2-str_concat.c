@@ -22,31 +22,36 @@ char *str_concat(char *s1, char *s2)
 	if (s2 == NULL)
 		s2 = "";
 
+	/**
+	 * get the string length
+	 */
 	s1_len = _strlen(s1);
 	s2_len = _strlen(s2);
 	len = s1_len + s2_len;
 	i = 0;
 
+	/**
+	  * allocate dynamic memory using the string len
+	  */
 	concat_str = (char *) malloc((len * sizeof(*s1)) + 1);
 
 	if (concat_str == NULL)
 		return (NULL);
-
 	while (i < s1_len)
 	{
 		concat_str[i] = s1[i];
 		i++;
 	}
-
 	i = 0;
+	/**
+	 * concatenante from the last stop of S1;
+	 */
 	while (s1_len < len)
 	{
 		concat_str[s1_len] = s2[i];
 		i++;
 		s1_len++;
 	}
-
 	concat_str[len] = '\0';
-
 	return (concat_str);
 }
