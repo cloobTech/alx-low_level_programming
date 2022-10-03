@@ -1,6 +1,5 @@
 #include "main.h"
 #include <stdlib.h>
-#include <stdio.h>
 
 /**
  * _strdup -  returns a pointer to a newly allocated space in memory, which
@@ -11,24 +10,8 @@
  * Return: NULL if str = NULL || insufficient space
  * On success, the return a pointer to the duplicated string
  */
-/**
- * main - check the code .
- *
- * Return: Always 0.
- */
-int main(void)
-{
-	char *s;
 
-	s = _strdup(NULL);
-	if (s == NULL)
-	{
-		printf("failed to allocate memory\n");
-		return (1);
-	}
-	free(s);
-	return (0);
-}
+
 
 char *_strdup(char *str)
 {
