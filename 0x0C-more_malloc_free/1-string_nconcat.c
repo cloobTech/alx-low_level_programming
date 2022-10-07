@@ -34,9 +34,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	len = s1_len + s2_len;
 	i = 0;
-	/**
-	  * allocate dynamic memory using the string len
-	  */
+	  /* allocate dynamic memory using the string len*/
 	concat_str = (char *) malloc((len * sizeof(*s1)) + 1);
 	if (concat_str == NULL)
 		return (NULL);
@@ -46,9 +44,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		i++;
 	}
 	i = 0;
-	/**
-	 * concatenante from the last stop of S1;
-	 */
+	/* concatenante from the last stop of S1;*/
 	while (s1_len < len)
 	{
 		concat_str[s1_len] = s2[i];
