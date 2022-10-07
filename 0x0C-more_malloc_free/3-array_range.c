@@ -2,10 +2,12 @@
 #include <stdlib.h>
 
 /**
- * _memset - is a function that copies char
+ * _memset - a fuction that fiils an array with values.
+ *
  * @s: memory to be filled
- * @b: input to be copied
- * @n: bytes to be copied
+ * @min: min range
+ * @max: max range
+ *
  * Return: string output
  */
 
@@ -21,6 +23,15 @@ int *_memset(int *s, char min, int max)
 	return (s);
 }
 
+/**
+ * array_range - creates an array of integers.
+ *
+ * @min: min range
+ * @max: max range
+ *
+ * Return: the pointer to the newly created array
+ */
+
 int *array_range(int min, int max)
 {
 	int *arr_range, range;
@@ -34,7 +45,7 @@ int *array_range(int min, int max)
 	if (!arr_range)
 		return (NULL);
 
-	_memset(arr_range,min,max);
+	_memset(arr_range, min, max);
 
 	return (arr_range);
 
