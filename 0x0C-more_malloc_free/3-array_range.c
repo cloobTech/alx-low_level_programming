@@ -11,7 +11,7 @@
  * Return: string output
  */
 
-int *_memset(int *s, char min, int max)
+int *_memset(int *s, int min, int max)
 {
 	unsigned int i;
 
