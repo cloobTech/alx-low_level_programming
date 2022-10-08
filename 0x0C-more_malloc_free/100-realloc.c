@@ -26,7 +26,7 @@ char *_memcpy(char *dest, char *src, unsigned int n)
 }
 
 /**
- * realloc -  a function that reallocates a memory block using malloc and free
+ * _realloc -  a function that reallocates a memory block using malloc and free
  *
  * @ptr: previous dynmanically allocated memory
  * @old_size: old memory size
