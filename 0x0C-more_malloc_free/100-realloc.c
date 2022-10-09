@@ -60,5 +60,6 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 
 	c_new_ptr = (char *)new_ptr;
 	_memcpy(c_new_ptr, c_ptr, new_size);
+	new_ptr = (void *)c_new_ptr;
 	return (new_ptr);
 }
