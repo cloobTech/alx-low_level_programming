@@ -2,30 +2,6 @@
 #include "main.h"
 
 /**
- * _memcpy - copies memory area.
- *
- * @dest: destination address
- * @src: source address
- * @n: number of bytes from src to dest
- *
- * Return: pointer to dest.
- */
-
-char *_memcpy(char *dest, char *src, unsigned int n)
-{
-	unsigned int i;
-
-	i = 0;
-	while (i < n)
-	{
-		dest[i] = src[i];
-		i++;
-	}
-
-	return (dest);
-}
-
-/**
  * _realloc -  a function that reallocates a memory block using malloc and free
  *
  * @ptr: previous dynmanically allocated memory
@@ -39,27 +15,35 @@ char *_memcpy(char *dest, char *src, unsigned int n)
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
 	void *new_ptr;
-	char *c_ptr, *c_new_ptr;
+	unsigned i;
 
-	c_ptr = (char *)ptr;
-
+/* no change  in size, previously allocated block stays the same */
 	if (new_size == old_size)
 		return (ptr);
+/* Condition for realloc to act as free */
 	if (new_size == 0 && ptr != NULL)
 	{
 		free(ptr);
 		return (NULL);
 	}
+/* Condition for malloc to act as malloc */
 	if (ptr == NULL)
-		c_ptr = malloc(new_size * sizeof(int));
+	{
+		new_ptr = malloc(new_size);
+		if (new_ptr == NULL)
+			return (NULL);
+	}
+/* Condition to reallocate previously allocated memory block */
+	if (new_size > old_size && (ptr != NULL))
+	{
+		new_ptr = malloc(new_size);
+		if (!new_ptr)
+			return (ptr);
 
-	new_ptr = malloc(new_size * sizeof(int));
-
-	if (!new_ptr)
-		return (ptr);
-
-	c_new_ptr = (char *)new_ptr;
-	_memcpy(c_new_ptr, c_ptr, new_size);
-	new_ptr = (void *)c_new_ptr;
+		for (i = 0; i < old_size; i++)
+/* Type casting done to enable dereferncing of void pointer*/
+			*((char *)new_ptr + 1) = *((char *)ptr + 1);
+		free(ptr);
+	}
 	return (new_ptr);
 }
