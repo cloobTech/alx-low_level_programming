@@ -15,7 +15,7 @@
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
 	void *new_ptr;
-	unsigned i;
+	unsigned int i;
 
 /* no change  in size, previously allocated block stays the same */
 	if (new_size == old_size)
