@@ -35,8 +35,8 @@ list_t *add_node_end(list_t **head, const char *str)
 	new->str = strdup(str);
 	new->len = _strlen(str);
 	(*head)->next = new;
-	new = *head;
+	*head = new;
 
-	return (*head);
+	return (new);
 
 }
