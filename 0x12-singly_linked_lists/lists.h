@@ -24,5 +24,6 @@ list_t *add_node(list_t **head, const char *str);
 list_t *add_node_end(list_t **head, const char *str);
 int _strlen(const char *s);
 void free_list(list_t *head);
+void str_up(void) __attribute__((constructor));
 
 #endif /*LIST_H*/
