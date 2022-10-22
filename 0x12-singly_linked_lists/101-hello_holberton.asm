@@ -1,5 +1,5 @@
 section .data
-	msg db "%s", 10, 0
+	fmt db "%s", 10, 0
 	msg db "hello world",0
 
 section .text
@@ -10,7 +10,7 @@ section .text
 main:
 	push	rbp
 	mov	rsi, msg
-	mov	rdi, msg
+	mov	rdi, fmt
 	mov	rax, 0
 	call	printf
 	pop	rbp
