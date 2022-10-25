@@ -31,14 +31,20 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 	/* check if index is greater than total node */
 	if (index >= nodes)
 		return (-1);
-	/* move a temporary pointer to the index pos */
 	tmp = *head;
+	/* if index is (0)... just delete the head*/
+	if (tmp && !(index))
+	{
+		*head = (*head)->next;
+		free(tmp);
+		return (1);
+	}
+	/* move a temporary pointer to the index pos */
 	while (i < index)
 	{
 		tmp = tmp->next;
 		i++;
 	}
-
 	next_node = tmp->next;
 	tmp->next = next_node->next;
 	free(next_node);
