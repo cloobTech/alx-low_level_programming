@@ -28,7 +28,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		nodes++;
 	}
 	/* get total nodes and check if idx is < nodes */
-	if (idx > nodes)
+	if (idx >= nodes)
 		return (NULL);
 
 	new = malloc(sizeof(listint_t));
