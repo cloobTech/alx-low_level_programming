@@ -1,5 +1,4 @@
 #include "lists.h"
-#include <stdio.h>
 
 /**
  * delete_nodeint_at_index - deletes the node at
@@ -13,11 +12,11 @@
 
 int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
-	listint_t *tmp;
+	listint_t *tmp, *next_node;
 	unsigned int i, nodes;
 
 	tmp = *head;
-	i = 0;
+	i = 1;
 	nodes = 0;
 
 	if (head == NULL)
@@ -34,12 +33,18 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 		return (-1);
 	/* move a temporary pointer to the index pos */
 	tmp = *head;
+	if (index == 0)
+	{
+		*head = *head->next;
+		free(tmp);
+	}
 	while (i < index)
 	{
 		tmp = tmp->next;
 		i++;
 	}
-
-	printf("----> %d\n", tmp->n);
+	next_node = tmp->next;
+	tmp->next = next_node->next;
+	free(tmp);
 	return (1);
 }
