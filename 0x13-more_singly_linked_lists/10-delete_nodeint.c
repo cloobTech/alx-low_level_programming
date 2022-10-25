@@ -33,18 +33,14 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 		return (-1);
 	/* move a temporary pointer to the index pos */
 	tmp = *head;
-	if (index == 0)
-	{
-		*head = *head->next;
-		free(tmp);
-	}
 	while (i < index)
 	{
 		tmp = tmp->next;
 		i++;
 	}
+
 	next_node = tmp->next;
 	tmp->next = next_node->next;
-	free(tmp);
+	free(next_node);
 	return (1);
 }
