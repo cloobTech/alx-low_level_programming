@@ -36,6 +36,13 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		return (NULL);
 	new->n = n;
 	tmp = *head;
+	/*add element to the begining*/
+	if (tmp && !(idx))
+	{
+		new->next = *head;
+		*head = new;
+		return (new);
+	}
 	/* move a temporary pointer to the index pos */
 	while (i < idx)
 	{
