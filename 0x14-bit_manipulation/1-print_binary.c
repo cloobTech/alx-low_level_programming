@@ -10,17 +10,20 @@
 
 void print_binary(unsigned long int n)
 {
-	binary_helper(n);
-}
-
-/**
- * binary_helper - prints binary
- * @n: value to be evakuated
- */
-
-void binary_helper(unsigned long int n)
-{
-	if (n > 1)
-		print_binary(n / 2);
-	_putchar(n % 2 + '0');
+	if (n == 0)
+	{
+		_putchar('0');
+		return;
+	}
+	if (n == 1)
+	{
+		_putchar('1');
+		return;
+	}
+	if (n > 0)
+		print_binary(n >> 1);
+	if (n & 1)
+		_putchar('1');
+	else
+		_putchar('0');
 }
