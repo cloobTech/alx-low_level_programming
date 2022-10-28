@@ -10,7 +10,7 @@ int main(void)
 {
     unsigned long int n;
 
-    n = 10;
+    n = 5;
     clear_bit(&n, 1);
     printf("%lu\n", n);
     n = 1024;
