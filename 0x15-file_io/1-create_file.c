@@ -19,14 +19,14 @@ int create_file(const char *filename, char *text_content)
 
 	if (filename == NULL)
 		return (-1);
-	len = _strlen(text_content);
-	size_len = len;
 
 	fd = open(filename, O_WRONLY | O_CREAT | O_TRUNC, 00600);
 	if (fd < 0)
 		return (-1);
 	if (text_content == NULL)
 		return (1);
+	len = _strlen(text_content);
+	size_len = len;
 	size_w = write(fd, text_content, len);
 	if (size_w < 0 || size_w < size_len)
 		return (-1);
