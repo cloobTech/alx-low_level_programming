@@ -26,13 +26,15 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (fd < 0)
 		return (0);
 	size_r = read(fd, buffer, letters);
+	if (size_r < 0)
+		return (0);
 	if (len > size_r)
 	{
 		letters = size_r;
 		len = letters;
+		size_w = write(STDERR_FILENO, buffer, letters);
+		return (size_w);
 	}
-	if (size_r < 0)
-		return (0);
 	size_w = write(1, buffer, letters);
 	free(buffer);
 	if (size_w < 0 || size_w < len)
