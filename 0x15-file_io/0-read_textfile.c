@@ -28,8 +28,8 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	size_r = read(fd, buffer, letters);
 	if (len > size_r)
 	{
-		len = size_r;
-		letters = len;
+		letters = size_r;
+		len = letters;
 	}
 	if (size_r < 0)
 		return (0);
