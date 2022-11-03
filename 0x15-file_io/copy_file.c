@@ -30,6 +30,7 @@ char *_read_file(const char *file)
 		exit(98);
 	}
 	size_r = read(fd, buffer, 1024);
+	size_r = (ssize_t) _strlen(buffer);
 	if (size_r < 0)
 	{
 		dprintf(2, "Error: Can't read from file %s\n", file);
@@ -61,7 +62,7 @@ int copy_file(const char *filename_one, char *filename_two)
 
 	/* calling the read func */
 	buffer = _read_file(filename_one);
-	size_r = _strlen(buffer);
+	size_r = (ssize_t)_strlen(buffer);
 	fd1 = open(filename_two, O_WRONLY | O_CREAT | O_TRUNC, 00664);
 	if (fd1 < 0)
 	{
