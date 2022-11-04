@@ -18,19 +18,19 @@ int _copy_file(const char *file, char *file_two)
 
 	if (file == NULL)
 	{
-		dprintf(2, "Error: Can't read from file %s\n", file);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file);
 		exit(98);
 	}
 	fd = open(file, O_RDONLY);
 	fd1 = open(file_two, O_WRONLY | O_CREAT | O_TRUNC | O_APPEND, 00664);
 	if (fd < 0)
 	{
-		dprintf(2, "Error: Can't read from file %s\n", file);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file);
 		exit(98);
 	}
 	if (fd1 < 0)
 	{
-		dprintf(2, "Error: Can't write to %s\n", file_two);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_two);
 		exit(99);
 	}
 	buffer = malloc(1024 * sizeof(char));
@@ -45,29 +45,27 @@ int _copy_file(const char *file, char *file_two)
 	{
 		size_r = read(fd, buffer, 1024);
 		size_w = write(fd1, buffer, size_r);
-		printf("     Size: %li\n", size_r);
-		printf("Buff Size: %d\n", _strlen(buffer));
 	}
 	if (size_r < 0)
 	{
-		dprintf(2, "Error: Can't read from file %s\n", file);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file);
 		exit(98);
 	}
 	if (close(fd) < 0)
 	{
-		dprintf(2, "Error: Can't close fd %i\n", fd);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", fd);
 		exit(100);
 	}
 	close(fd);
 	if (size_w < 0 || size_w < size_r)
 	{
-		dprintf(2, "Error: Can't write to %s\n", file_two);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_two);
 		exit(99);
 	}
 	free(buffer);
 	if (close(fd1) < 0)
 	{
-		dprintf(2, "Error: Can't close fd %i\n", fd1);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", fd1);
 		exit(100);
 	}
 	close(fd1);
