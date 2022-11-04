@@ -16,11 +16,6 @@ int _copy_file(const char *file, char *file_two)
 	ssize_t size_r, size_w;
 	char *buffer;
 
-	if (file == NULL)
-	{
-		dprintf(STDOUT_FILENO, "Error: Can't read from file %s\n", file);
-		exit(98);
-	}
 	fd = open(file, O_RDONLY);
 	fd1 = open(file_two, O_WRONLY | O_CREAT | O_TRUNC | O_APPEND, 00664);
 	if (fd < 0)
