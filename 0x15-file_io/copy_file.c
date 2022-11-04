@@ -41,15 +41,33 @@ int _copy_file(const char *file, char *file_two)
 	}
 	size_r = read(fd, buffer, 1024);
 	size_w = write(fd1, buffer, size_r);
-	while (size_r != 0)
+	if (size_w < 0 || size_w < size_r)
 	{
-		size_r = read(fd, buffer, 1024);
-		size_w = write(fd1, buffer, size_r);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_two);
+		free(buffer);
+		exit(99);
 	}
 	if (size_r < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file);
 		exit(98);
+	}
+	while (size_r != 0)
+	{
+		size_r = read(fd, buffer, 1024);
+		size_w = write(fd1, buffer, size_r);
+		if (size_w < 0 || size_w < size_r)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_two);
+			free(buffer);
+			exit(99);
+		}
+		if (size_r < 0)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file);
+			free(buffer);
+			exit(98);
+		}
 	}
 	if (close(fd) < 0)
 	{
@@ -57,11 +75,6 @@ int _copy_file(const char *file, char *file_two)
 		exit(100);
 	}
 	close(fd);
-	if (size_w < 0 || size_w < size_r)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_two);
-		exit(99);
-	}
 	free(buffer);
 	if (close(fd1) < 0)
 	{
