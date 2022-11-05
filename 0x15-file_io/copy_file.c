@@ -20,7 +20,7 @@ int _copy_file(const char *file, char *file_two)
 	fd1 = open(file_two, O_WRONLY | O_CREAT | O_TRUNC | O_APPEND, 00664);
 	if (fd < 0)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file);
+		dprintf(1, "Error: Can't read from file %s\n", file);
 		exit(98);
 	}
 	if (fd1 < 0)
